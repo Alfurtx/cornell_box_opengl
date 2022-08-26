@@ -1,0 +1,32 @@
+version(1);
+
+project_name = "cornell_box_opengl";
+patterns = {
+"*.cpp",
+"*.c",
+"*.h",
+"*.hpp",
+"*.bat",
+"*.4coder",
+};
+
+blacklist_patterns = {
+".*",
+".git",
+};
+
+load_paths = {
+{
+	{
+		{".", .relative = true, .recursive = true,}
+	}, .os = "win"},
+};
+
+command_list = {
+	{ .name = "build",
+	  .out "*compilation*", .footer_panel = true, .save_dirty_files = true,
+	  .cmd = { {"build.bat", .os = "win"},},
+	},
+};
+
+fkey_command[1] = "build";
