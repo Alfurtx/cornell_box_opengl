@@ -2,8 +2,6 @@
 #include "camera.cpp"
 #include "renderer.cpp"
 
-// TODO(fonsi): Omnidirectional shadow mapping
-
 #include "vertex_data.cpp"
 
 Camera camera;
@@ -42,8 +40,6 @@ main(void)
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, cursor_position_callback);
     glfwSetKeyCallback(window, key_callback);
-    
-    // TODO(fonsi): setup callbacks
     
     if(!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress)) {
         glfwTerminate();
