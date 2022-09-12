@@ -1,32 +1,41 @@
 version(1);
 
-project_name = "cornell_box_opengl";
+project_name = "Cornell Box OpenGL";
 patterns = {
-"*.cpp",
-"*.c",
-"*.h",
-"*.hpp",
-"*.bat",
-"*.4coder",
+    "*.cpp",
+    "*.c",
+    "*.h",
+    "*.hpp",
+    "*.bat",
+    "*.vert",
+    "*.geo",
+    "*.frag",
+    "*.4coder",
 };
 
 blacklist_patterns = {
-".*",
-".git",
+    ".*",
+    ".git",
 };
 
 load_paths = {
-{
-	{
-		{".", .relative = true, .recursive = true,}
-	}, .os = "win"},
+    {
+        {
+            {".", .relative = true, .recursive = true,}
+        }, .os = "win"
+    },
 };
 
 command_list = {
 	{ .name = "build",
-	  .out "*compilation*", .footer_panel = true, .save_dirty_files = true,
-	  .cmd = { {"build.bat", .os = "win"},},
+        .out = "*compilation*", .footer_panel = true, .save_dirty_files = true,
+        .cmd = { {"build.bat", .os = "win"},},
+	},
+	{ .name = "run",
+        .out = "*demo*", .footer_panel = true, 
+        .cmd = {{"run.bat", .os = "win"},},
 	},
 };
 
 fkey_command[1] = "build";
+fkey_command[2] = "run";
